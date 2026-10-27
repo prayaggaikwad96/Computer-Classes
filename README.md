@@ -1,13 +1,24 @@
 # Computer Classes
 
-A structured record of my computer-class sessions, exercises, notes, and practice work.
+A structured learning archive for computer-class notes, exercises, and practice work.
 
 ## Repository contents
 
-- Add class notes and exercises in clearly named files and folders.
-- Use descriptive filenames with dates or topics when that helps locate material.
-- Avoid uploading passwords, API keys, personal records, or other secrets.
+- Class notes organized by subject or topic.
+- Exercises and practice files with descriptive names.
+- Small experiments that support learning and revision.
+
+## Organization guidelines
+
+- Group related material into clearly named folders.
+- Use descriptive filenames; include dates when they help identify a session.
+- Add a short README when a folder needs setup instructions or context.
+- Keep credentials, API keys, passwords, and private records out of the repository.
 
 ## Status
 
-Learning archive. Materials may be incomplete; verify notes against the relevant class material before relying on them.
+This is a learning archive. Some materials may be incomplete; verify notes against the relevant class material before relying on them.
+
+---
+
+Maintained by [Prayag Gaikwad](https://github.com/prayaggaikwad96).
