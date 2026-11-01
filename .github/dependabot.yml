@@ -1,17 +1,2 @@
 version: 2
-updates:
-  - package-ecosystem: "github-actions"
-    directory: "/.github/workflows"
-    schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "04:00"
-      timezone: "Asia/Kolkata"
-    open-pull-requests-limit: 5
-    groups:
-      github-actions-minor-and-patch:
-        patterns:
-          - "*"
-        update-types:
-          - "minor"
-          - "patch"
+updates: []
