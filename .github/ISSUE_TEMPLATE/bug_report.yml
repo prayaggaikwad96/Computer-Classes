@@ -1,0 +1,46 @@
+name: Bug report
+description: Report an error or problem in this repository's learning materials.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For security vulnerabilities, do not open a public issue. Follow the private reporting instructions in [SECURITY.md](https://github.com/prayaggaikwad96/Computer-Classes/blob/main/SECURITY.md).
+  - type: textarea
+    id: location
+    attributes:
+      label: Where did you find the problem?
+      description: Include the file path, section, or example name.
+      placeholder: "e.g. networking/tcp/README.md, the handshake section"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is incorrect or not working?
+      description: Describe the problem and its impact.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+      description: Include a source or explanation if it helps verify the correction.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: How can the problem be reproduced?
+      description: Provide steps or commands when relevant. Do not include secrets or private information.
+    validations:
+      required: false
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Add relevant screenshots, links, or other context.
+    validations:
+      required: false
