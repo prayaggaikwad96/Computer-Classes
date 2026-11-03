@@ -1,2 +1,5 @@
+# Dependabot version updates are intentionally disabled for this repository.
+# No package manifests or GitHub Actions workflow dependency files are maintained here.
+# Keeping updates empty prevents the updater from scanning a nonexistent dependency path.
 version: 2
 updates: []
