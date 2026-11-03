@@ -1,2 +1,6 @@
 version: 2
 updates: []
+
+# Dependabot security and version updates are intentionally not configured here.
+# Keep this file valid and explicit; add ecosystem entries only when this repository
+# begins tracking dependencies that should be updated by Dependabot.
