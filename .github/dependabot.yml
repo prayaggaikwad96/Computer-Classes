@@ -1,6 +1,8 @@
 version: 2
-updates: []
-
-# Dependabot security and version updates are intentionally not configured here.
-# Keep this file valid and explicit; add ecosystem entries only when this repository
-# begins tracking dependencies that should be updated by Dependabot.
+updates:
+  # Keep the GitHub Actions ecosystem current without scanning the empty
+  # .github/workflows directory as if it were a dependency manifest.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
