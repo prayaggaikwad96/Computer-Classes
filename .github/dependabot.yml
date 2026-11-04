@@ -1,8 +1,0 @@
-version: 2
-updates:
-  # Keep the GitHub Actions ecosystem current without scanning the empty
-  # .github/workflows directory as if it were a dependency manifest.
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule:
-      interval: "weekly"
