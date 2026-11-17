@@ -1,0 +1,31 @@
+name: Security policy validation
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "SECURITY.md"
+      - ".github/workflows/security-policy-check.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate security policy
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - name: Verify policy exists and avoids unsafe placeholders
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s SECURITY.md
+          grep -qi "private" SECURITY.md
+          grep -qi "public issues" SECURITY.md
+          ! grep -Eiq '(ghp_[A-Za-z0-9]{20,}|AKIA[0-9A-Z]{16}|-----BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY-----)' SECURITY.md
