@@ -1,7 +1,5 @@
+# Dependabot version updates are intentionally disabled for this repository.
+# No package manifests or GitHub Actions workflow dependency files are maintained here.
+# Re-enable an ecosystem only after adding a matching manifest or workflow.
 version: 2
-updates:
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    open-pull-requests-limit: 5
+updates: []
