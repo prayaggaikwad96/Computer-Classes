@@ -1,8 +1,6 @@
 version: 2
 
 updates:
-  # Dependabot's GitHub Actions ecosystem scans .github/workflows.
-  # Point to the actual directory; there is currently one workflow: codeql.yml.
   - package-ecosystem: "github-actions"
     directory: "/.github/workflows"
     schedule:
