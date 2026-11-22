@@ -1,6 +1,6 @@
-# Branch protection policy
+# Desired branch protection policy for `Developer`
 
-The `Developer` branch is a protected integration branch and must follow the same protection standard as `main`.
+**Live status checked 22 November 2026:** the GitHub branch API currently reports `Developer` as `protected: false`. The branch is therefore not protected at this time. This document describes the settings that should be applied; it is not evidence that those settings are active.
 
 Configure the branch protection rule in **Settings → Branches → Add branch protection rule**:
 
