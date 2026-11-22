@@ -2,7 +2,9 @@ version: 2
 
 updates:
   - package-ecosystem: "github-actions"
-    directory: "/.github/workflows"
+    # GitHub's required path for the Actions ecosystem. Dependabot searches
+    # both /.github/workflows and a root action.yml from this directory.
+    directory: "/"
     schedule:
       interval: "weekly"
       day: "monday"
