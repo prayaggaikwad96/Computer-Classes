@@ -1,7 +1,11 @@
 version: 2
+
 updates:
+  # Track the repository's actual workflow directory. Dependabot's
+  # github-actions updater requires at least one workflow/action manifest
+  # beneath this directory; this repository currently has codeql.yml only.
   - package-ecosystem: "github-actions"
-    directory: "/"
+    directory: "/.github/workflows"
     schedule:
       interval: "weekly"
       day: "monday"
