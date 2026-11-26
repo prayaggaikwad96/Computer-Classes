@@ -1,18 +1,33 @@
-# Desired branch protection policy for `Developer`
+# Branch Protection Policy
 
-**Live status checked 22 November 2026:** the GitHub branch API currently reports `Developer` as `protected: false`. The branch is therefore not protected at this time. This document describes the settings that should be applied; it is not evidence that those settings are active.
+**Live status checked: 26 November 2026**
 
-Configure the branch protection rule in **Settings → Branches → Add branch protection rule**:
+GitHub's branch listing currently reports:
 
-- Branch name pattern: `Developer`
-- Require a pull request before merging.
-- Require at least one approval when independent reviewers are available; for a solo-maintained repository, use CODEOWNERS/required checks as the quality gate rather than a fictitious approval.
-- Dismiss stale approvals when new commits are pushed.
-- Require conversation resolution.
-- Require status checks before merging, selecting only checks that are actually emitted by the workflows in this repository.
-- Require branches to be up to date before merging when the required check set is stable.
-- Require linear history if the repository's merge strategy supports it.
+| Branch | Role | GitHub protected flag |
+| --- | --- | --- |
+| `main` | Default branch | `true` |
+| `Developer` | Development branch | `false` |
+
+The `main` branch is protected at the branch level. This does **not** prove that every recommended setting is enabled: the connected GitHub integration cannot read the detailed classic branch-protection rules (the endpoint returned 403). The repository-level rulesets endpoint returned an empty list.
+
+## Recommended policy
+
+Keep `main` protected. If `Developer` remains an active integration branch, protect it as well.
+
+For each active protected branch:
+
+- Require pull requests before merging.
+- Require independent approval when another qualified reviewer is available; never treat the PR author's own review as approval.
+- Dismiss stale approvals after new commits and require review conversations to be resolved.
+- Require only status checks that actually run reliably for the branch and its pull requests. This repository currently has a CodeQL workflow; verify its exact check context before making it mandatory.
 - Block force pushes and branch deletion.
-- Do not allow bypassing the rules except for a documented emergency.
+- Include administrators in protection and restrict bypass to documented emergencies.
 
-**Important:** This file documents the desired policy; it does not itself enable GitHub branch protection. Apply the settings in repository Settings (the connected GitHub integration cannot administer branch protection for this account).
+Do not invent CI checks for this learning archive or require checks that do not run on every relevant PR.
+
+## Apply and verify
+
+Use **Repository Settings → Rules → Rulesets** or **Settings → Branches**. This file records policy and observed status; it does not turn protection on or modify GitHub settings.
+
+After applying any rule to `Developer`, verify the effective settings and a real pull request before marking the branch protected.
